@@ -15,18 +15,11 @@ public class mainTest {
     	int remainder=0;
     	while((l1!=null)&&(m1!=null)) {
     		int sumNode=l1.val+m1.val+remainder;
-    		if(sumNode>9) {
-    			remainder=sumNode/10;
-    			pointer.val=sumNode%10;
-    		}
-    		else {
-    			pointer.val=sumNode;
-    			remainder=0;
-    		}
+			remainder=sumNode/10;
+			pointer.val=sumNode%10;
     		if((l1.next!=null)||(m1.next!=null)) {
-    			ListNode nextNode =new  ListNode ();
-    			pointer.next=nextNode;
-    			pointer=nextNode;	
+    			pointer.next=new  ListNode ();
+    			pointer=pointer.next;	
 			}
     		l1=l1.next;
     		m1=m1.next;	
@@ -43,27 +36,19 @@ public class mainTest {
     	if(remainderList!=null) {
     		while(remainderList!=null) {
     			int sumNode=remainderList.val+remainder;
-    			if(sumNode>9) {
-        			remainder=sumNode/10;
-        			pointer.val=sumNode%10;
-        		}
-        		else {
-        			pointer.val=sumNode;
-        			remainder=0;
-        		}
+    			remainder=sumNode/10;
+    			pointer.val=sumNode%10;
         		if((remainderList.next!=null)) {
-        			ListNode nextNode =new  ListNode ();
-        			pointer.next=nextNode;
-        			pointer=nextNode;	
+        			pointer.next=new  ListNode ();
+        			pointer=pointer.next;	
     			}
         		remainderList=remainderList.next;
     		}
     		
     	}
     	if(remainder>0) {
-    		ListNode nextNode =new  ListNode ();
-			pointer.next=nextNode;
-			pointer=nextNode;	
+			pointer.next=new  ListNode ();
+			pointer=pointer.next;	
     		pointer.val=remainder;
     	}
     	
