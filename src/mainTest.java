@@ -8,7 +8,7 @@ public class mainTest {
 	    ListNode(int val) { this.val = val; }
 	    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 	}
-	
+    // same as merge sort problem .
     public static ListNode addTwoNumbers(ListNode l1, ListNode m1) {
     	ListNode Result =new  ListNode ();
     	ListNode pointer =Result;
